@@ -1,0 +1,30 @@
+header {
+  text-align: center;
+  border-top: 2px solid orange;
+}
+#logo {
+  width: 200px;
+}
+#sottotitolo {
+  text-align: center;
+  background-color: rgb(252, 247, 238);
+  height: 50px;
+}
+#maiuscolo {
+  text-transform: uppercase;
+}
+
+main {
+  margin: 0 auto;
+  width: 50vw;
+}
+
+h1 {
+  text-align: center;
+}
+
+figcaption {
+  text-align: center;
+  padding: 1em;
+  color: grey;
+}
