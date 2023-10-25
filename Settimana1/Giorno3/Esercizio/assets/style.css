@@ -1,16 +1,17 @@
 header {
   text-align: center;
-  border-top: 2px solid orange;
 }
 #logo {
   width: 200px;
 }
-#sottotitolo {
+#sottologo {
   text-align: center;
   background-color: rgb(252, 247, 238);
   height: 50px;
+  border-top: 2px solid orange;
+  color: darkgreen;
 }
-#maiuscolo {
+.maiuscolo {
   text-transform: uppercase;
 }
 
@@ -23,8 +24,38 @@ h1 {
   text-align: center;
 }
 
+#focaccia {
+  border-radius: 10px 10px 10px 10px;
+}
+
 figcaption {
   text-align: center;
   padding: 1em;
   color: grey;
+}
+
+figure {
+  margin: 0;
+  width: 100%;
+}
+
+#featured {
+  border-left: 1px solid orange;
+  padding-left: 15px;
+}
+
+u {
+  color: rgb(81, 152, 197);
+}
+h3 {
+  color: red;
+}
+
+#sottoH2 {
+  border-top: 1px solid lightgreen;
+}
+
+footer {
+  margin: 0 auto;
+  width: 50vw;
 }
