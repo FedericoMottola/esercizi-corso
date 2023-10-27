@@ -1,0 +1,107 @@
+/* Your styles here */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #393d41;
+  font-size: 1.2rem;
+  font-family: "Open Sans";
+  line-height: 1.65;
+  text-align: center;
+}
+
+header {
+  background-color: black;
+  text-align: center;
+  height: 15vh;
+}
+
+#primoDiv {
+  background-image: url("../images/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 30vh;
+  padding: 120px;
+}
+
+#logo {
+  height: 40%;
+  padding-top: 25px;
+}
+
+.headings {
+  font-family: "Montserrat";
+  margin: 0 auto;
+  color: #25a2c3;
+  line-height: 1.5;
+}
+
+.headings-white {
+  font-family: "Montserrat";
+  margin: 0 auto;
+  line-height: 1.5;
+  color: white;
+}
+
+button {
+  background-color: #f04c2f;
+  font-family: "Montserrat";
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: none;
+  padding: 10px;
+  color: white;
+}
+
+#immaginePc {
+  border-radius: 50%;
+  width: 100%;
+}
+
+#secondoDiv {
+  margin-top: -50px;
+  padding: 120px;
+}
+
+aside {
+  background-color: #e22d0e;
+  color: white;
+  padding: 50px;
+}
+
+figure {
+  border: 1px solid #dee1e3;
+}
+
+.immaginiSchede {
+  width: 100%;
+}
+
+footer {
+  background-color: #25a2c3;
+  color: #c8e7f0;
+}
+
+ul {
+  list-style-type: none;
+  padding-bottom: 1cm;
+  margin-block-start: 0px;
+  padding-inline-start: 0px;
+}
+
+.iconcine {
+  color: #ffffff;
+}
+
+address {
+  font-size: 1.2rem;
+}
+
+#ultimo {
+  border-top: 1px solid #dee1e3;
+}
