@@ -13,6 +13,14 @@ REGOLE
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+/*
+null: valore assente 
+undefined: varaibile senza ancora un valore
+numero: sequanza di numeri
+stringa: sequenza di caratteri 
+valori booleani: un tipo di dato che può essere vero o falso
+*/
+
 /* ESERCIZIO 2
  Crea una variable chiamata "name" e assegna ad essa il tuo nome, sotto forma di stringa.
 */
