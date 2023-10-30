@@ -104,4 +104,6 @@ address {
 
 #ultimo {
   border-top: 1px solid #dee1e3;
+  width: 50%;
+  margin: 0 auto;
 }
