@@ -91,3 +91,20 @@ name1 === name2.toLowerCase()
   ? (uguale = "sono uguali")
   : (uguale = "sono diversi");
 console.log(uguale);
+
+let name3 = 'john';
+let name4 = 'John';
+let verifica = name3 === name4;
+// Soluzione 1
+console.log('I due nomi sono uguali?' + verifica);
+
+// Soluzione 2
+console.log ('I due nomi sono uguali', name3 === name4);
+console.log ('I due nomi sono uguali'+ name3 === name4);
+
+// Soluzione 1 altra richiesta
+let altraVerifica = name3.toLowerCase() === name4.toLowerCase();
+console.log('I due nomi sono uguali?', altraVerifica);
+
+//Soluzione 2 altra richiesta
+console.log('I due nomi sono uguali?', name3.toLowerCase() === name2.toLowerCase());
