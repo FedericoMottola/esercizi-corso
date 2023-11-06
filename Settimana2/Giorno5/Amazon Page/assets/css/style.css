@@ -1,0 +1,76 @@
+/* Your styles here */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.scuro {
+  background-color: darkslategray;
+}
+
+.chiaro {
+  background-color: lightslategray;
+}
+
+#sottotitolo {
+  background-color: orange;
+}
+
+nav {
+  background-color: lightslategray;
+}
+
+main {
+  width: 95%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.bianco {
+  color: white;
+}
+
+#guida {
+  background-image: url(../images/bg-image.png);
+  height: 150px;
+}
+
+#scritta {
+  padding: 30px;
+}
+
+#cards {
+  display: inline-block;
+  padding: 5%;
+}
+
+.immagini {
+  width: 24%;
+  padding: 6px;
+  border-radius: 5%;
+}
+
+.immagini2 {
+  width: 90%;
+  padding: 6px;
+}
+
+span {
+  color: blue;
+}
+
+#primoLogo {
+  width: 100px;
+}
+
+#link {
+  padding-left: 750px;
+}
+
+#ultimoLogo {
+  padding-left: 600px;
+  width: 20%;
+}
