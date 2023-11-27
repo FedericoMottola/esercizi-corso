@@ -1,0 +1,127 @@
+body {
+  margin: 0 auto;
+  padding: 70px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #612406;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.prodcard {
+  min-width: 350px;
+  min-height: 500px;
+  width: 30%;
+  height: 100%;
+  border-radius: 75px;
+  background-color: #c9b24198;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.prodprice {
+  display: flex;
+  flex-direction: row;
+}
+
+.prodcta button {
+  color: #612406;
+  background-color: #f3df85;
+  border: none;
+  border-radius: 20px;
+  padding: 12px;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  width: 60%;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+img {
+  object-fit: cover;
+  padding-bottom: 40px;
+}
+
+.proddata {
+  display: flex;
+  align-items: center;
+}
+
+.prodprice {
+  padding-left: 50px;
+}
+
+.prodcta {
+  display: flex;
+  justify-content: center;
+}
+
+/* NAV */
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    background-color: #c9b24198;
+    
+    width: 50vw;
+  height: 30vh;
+    border-radius: 75px;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    color: #612406;
+  background-color: #f3df85;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2rem;
+height: 50%;
+}
+
+.special {
+    font-weight: 700;
+    font-size: 2rem;
+    height: 90%;
+    width: 100%;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+
+.special img {
+    width: 20%;
+   padding-top: 35px;    
+}
+
+/* ARTICLE */
+article {
+  display: flex;
+  gap: 30px;
+  background-color: #fef7e2 ;
+  padding: 30px;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  flex-wrap: wrap-reverse;
+}
+
+article img {
+  overflow: hidden;
+  object-fit: cover;
+  /* flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 500px; */
+  flex: 1 1 500px;  /*GROW /SHRINK/ BASIS */
+}
+article .articleText {
+flex-shrink: 1;
+flex-grow: 1;
+flex-basis: 400px;
+line-height: 1.4;
+}

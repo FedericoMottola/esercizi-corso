@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:wght@700&family=Open+Sans:wght@300&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Caveat';
+  font-size: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 70% vw;
+  height: 600px;
+  background-color: #666666;
+  margin: 30px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+
+.postIt {
+  width: 290px;
+  height: 200px;
+  text-align: center;
+  box-shadow: 10px 10px 5px rgb(50, 49, 49);
+  animation: comparsa 1s backwards;
+}
+
+.primi {
+  background-color: #f5f5c3;
+ rotate: -5deg;
+}
+
+.secondi {
+  background-color: #b8dbba;
+  rotate: 5deg;
+}
+
+.terzi {
+  background-color: #a3a4b9;
+  rotate: -5deg;
+}
+
+.postIt:hover {
+transform: scale(1.4);
+rotate: 0deg;
+}
+
+
+
+@keyframes comparsa{
+    0%{
+     opacity: 0;
+      
+    }
+    50%{
+        opacity: 0.5;
+        
+      }
+    100%{
+      
+      opacity: 1;
+      
+    }
+  }
+  
+  #primo{
+      animation-name: comparsa;
+      animation-duration: 1s;
+  }
+
+  @keyframes comparsa{
+    0%{
+        
+     opacity: 0;
+      
+    }
+    50%{
+        opacity: 0.5;
+        
+      }
+    100%{
+       
+      opacity: 1;
+      
+    }
+  }
+  
+  #secondo{
+      animation-name: comparsa;
+      animation-duration: 1s;
+      animation-delay: 1s;
+  }
+
+  @keyframes comparsa{
+    0%{
+        
+     opacity: 0;
+      
+    }
+    50%{
+        opacity: 0.5;
+        
+      }
+    100%{
+        
+      opacity: 1;
+      
+    }
+  }
+  
+  #terzo{
+      animation-name: comparsa;
+      animation-duration: 1s;
+      animation-delay: 2s;
+  }
+
+  @keyframes comparsa{
+    0%{
+        
+     opacity: 0;
+      
+    }
+    50%{
+        opacity: 0.5;
+        
+      }
+    100%{
+        
+      opacity: 1;
+      
+    }
+  }
+  
+  #quarto{
+      animation-name: comparsa;
+      animation-duration: 1s;
+      animation-delay: 3s;
+  }
+
+  @keyframes comparsa{
+    0%{
+        
+     opacity: 0;
+      
+    }
+    50%{
+        opacity: 0.5;
+        
+      }
+    100%{
+        
+      opacity: 1;
+      
+    }
+  }
+  
+  #quinto{
+      animation-name: comparsa;
+      animation-duration: 1s;
+      animation-delay: 4s;
+  }
+
+  @keyframes comparsa{
+    0%{
+        
+     opacity: 0;
+      
+    }
+    50%{
+        opacity: 0.5;
+        
+      }
+    100%{
+        
+      opacity: 1;
+      
+    }
+  }
+  
+  #sesto{
+      animation-name: comparsa;
+      animation-duration: 1s;
+      animation-delay: 5s;
+  }
+
+  @keyframes comparsa{
+    0%{
+        
+     opacity: 0;
+      
+    }
+    50%{
+        opacity: 0.5;
+        
+      }
+    100%{
+        
+      opacity: 1;
+      
+    }
+  }
+  
+  #settimo{
+      animation-name: comparsa;
+      animation-duration: 1s;
+      animation-delay: 6s;
+  }
+
+  @keyframes comparsa{
+    0%{
+        
+     opacity: 0;
+      
+    }
+    50%{
+        opacity: 0.5;
+        
+      }
+    100%{
+        
+      opacity: 1;
+      
+    }
+  }
+  
+  #ottavo{
+      animation-name: comparsa;
+      animation-duration: 1s;
+      animation-delay: 7s;
+  }

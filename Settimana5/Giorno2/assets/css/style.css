@@ -27,6 +27,9 @@ header {
   box-shadow: 0 3px 3px #444;
   margin-bottom: 1.5em;
   padding: 2em 1.5em;
+  position: sticky;
+  top: 0;
+  z-index: 3;
 }
 
 @media screen and (min-width: 800px) {
@@ -187,7 +190,9 @@ h1 + p {
   border: 4px solid #00a0c6;
   outline: 4px solid #a02571;
   padding: 3px;
+  float: left;
 }
+
 ul,
 ol {
   margin-left: 2em;
@@ -223,6 +228,42 @@ iframe {
 
   iframe {
     height: 267px;
+  }
+}
+
+h1 span {
+  position: relative;
+  display: inline-block;
+}
+#contenuto {
+  position: absolute;
+  width: 90%;
+  opacity: 0.6;
+  right: 0;
+  left: 0;
+  top: 90%;
+}
+
+section h2 {
+  position: absolute;
+top: -10%;
+}
+
+@media screen and (max-width: 576px) {
+  p,ol,li {
+    font-size: 1.6rem;
+  }
+  h1 {
+    font-size: 3.8rem;
+  }
+  h2 {
+    font-size: 2.0rem;
+  }
+}
+
+@media (hover:none) {
+  header p {
+    display: none;
   }
 }
 
@@ -313,6 +354,10 @@ aside div {
   padding: 1em;
 }
 
+#vaiSu {
+  color: rgb(218, 62, 218);
+}
+
 @media screen and (min-width: 1200px) {
   aside div {
     display: inline-block;
@@ -386,3 +431,30 @@ footer a {
     display: none;
   }
 }
+
+.toTop {
+  line-height: 1;
+  position: fixed;
+  right: 0px;
+  z-index: 999;
+}
+
+
+
+.toTop{
+  bottom: 16px;
+}
+
+
+  .toTop a {
+    font-size: 3rem;
+    display: block;
+  }
+
+  aside div .fa-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 4rem;
+
+  } 

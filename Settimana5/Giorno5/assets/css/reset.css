@@ -1,0 +1,371 @@
+/* CSS Reset */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Spectral:wght@300&display=swap");
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+}
+
+header {
+  width: 100%;
+  border-bottom: 1px solid;
+  background-color: #ffc017;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+ul {
+  padding-right: 150px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+ul li {
+  display: inline-block;
+  padding: 1em;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+}
+
+li button {
+  border-radius: 25px;
+  background-color: black;
+  color: white;
+  height: 40px;
+  width: 110px;
+  border: none;
+  font-weight: 700;
+}
+
+li button:hover {
+  cursor: pointer;
+}
+
+header img {
+  padding-left: 150px;
+}
+
+#divM {
+  width: 50%;
+  float: right;
+}
+
+#divAccantoM {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  padding-top: 60px;
+  padding-left: 150px;
+}
+
+#divContenitore {
+  background-color: #ffc017;
+  display: flex;
+  flex-direction: row;
+  height: 450px;
+  border-bottom: 1px solid;
+  padding-top: 80px;
+}
+
+h1 {
+  font-family: "Spectral", serif;
+  font-weight: 800;
+  font-size: 6.5rem;
+}
+
+#divAccantoM p {
+  font-family: "Roboto", sans-serif;
+  color: rgb(46, 45, 45);
+  font-size: 1.5rem;
+}
+
+#divAccantoM button {
+  border-radius: 25px;
+  background-color: rgb(46, 45, 45);
+  color: white;
+  height: 40px;
+  width: 200px;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+#divAccantoM button:hover {
+  cursor: pointer;
+  background-color: black;
+}
+
+.trending {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 100px;
+  padding-top: 50px;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+}
+
+.articoli {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px;
+  padding-left: 90px;
+}
+
+.dentroArticoli {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 25%;
+  align-items: baseline;
+}
+
+#immagine1 {
+  border-radius: 50px;
+}
+
+.colonna {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.riga {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.numeri {
+  color: rgb(224, 222, 222);
+  font-size: 2rem;
+}
+
+b {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 1em;
+}
+
+.immagini {
+  width: 8%;
+}
+
+.inRiga {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+span {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8em;
+  color: rgb(184, 180, 180);
+}
+
+main {
+  border-bottom: 1px solid rgb(172, 169, 169);
+}
+
+#contenitore {
+  padding-left: 150px;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.contenitoreArticoli {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 50px;
+}
+
+.immaginiArticoli {
+  width: 40%;
+}
+
+aside button {
+  border-radius: 40px;
+  border: none;
+  background-color: #eeebeb;
+  height: 30px;
+  font-size: 1rem;
+}
+
+aside button:hover {
+  cursor: pointer;
+  background-color: dimgrey;
+}
+aside div {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+aside {
+  padding-left: 50px;
+  padding-right: 70px;
+}
+
+footer {
+  border-top: 1px solid rgb(212, 207, 207);
+  padding-left: 50px;
+
+  margin-top: 20px;
+  margin-right: 80px;
+}
+
+aside {
+  position: sticky;
+}
