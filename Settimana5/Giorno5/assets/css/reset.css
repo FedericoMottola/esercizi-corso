@@ -366,6 +366,8 @@ footer {
   margin-right: 80px;
 }
 
-aside {
+#sticky {
   position: sticky;
+  height: 20vh;
+  top: 100px;
 }
