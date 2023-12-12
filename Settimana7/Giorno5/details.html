@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dettagli</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar bg-secondary mb-4">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="logoAmazon" width="100" height="40">
+            <a href="./product.html">Go back</a>
+          </a>
+        </div>
+    </nav>
+    <main>
+    <div class="container">
+        <h1>Details</h1>
+        
+        <div id="content"></div>
+    </div>
+ </main>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ <script>
+
+    const params = new URLSearchParams(location.search)
+    const id = params.get("id")
+
+    const content = document.getElementById("content");
+    const url = "https://striveschool-api.herokuapp.com/api/product/"
+    const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc4MmM1NmMwNTgzNTAwMTg1MjJkZTYiLCJpYXQiOjE3MDIzNzQ0ODYsImV4cCI6MTcwMzU4NDA4Nn0.rh9ckj0X2izoP_x9c5ALxf1Wr78dNgDxMOvx3EwH74A"
+
+    fetch(`${url}/${id}`, {
+        headers: {
+            "Authorization": token,
+            "Content-Type": "application/json"
+        },
+    })
+      .then((response) => response.json())
+      .then((product) => {
+        // VISUALIZZARE I DETTAGLI 
+        content.innerHTML = 
+        `<div class="card">
+            <img src="${product.imageUrl}" class="card-img-top" alt="Product Image" />
+            <div class="card-body">
+              <h5 class="card-title">${product.name}</h5>
+              <p class="card-text">Breve descrizione: ${product.description}</p>
+              <p class="card-text">Brand: ${product.brand}</p>
+              <p class="card-text">Prezzo: ${product.price}€</p>
+              <!-- Aggiungi altri dettagli se necessario -->
+            </div>
+          </div>`
+        ;
+      })
+      .catch((error) => {
+        console.error("Errore", error);
+      });
+
+ </script>
+   
+</body>
+</html>
