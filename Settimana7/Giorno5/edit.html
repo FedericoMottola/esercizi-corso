@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>edit</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
     <nav class="navbar bg-secondary mb-4">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="logo.png" alt="logoAmazon" width="100" height="40">
-            <a href="./product.html">Home</a>
-          </a>
-        </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="logo.png" alt="logoAmazon" width="100" height="40" />
+          <a href="./product.html">Home</a>
+        </a>
+      </div>
     </nav>
 
     <main>
-        <form class="container" id="content">
-            
-          </form>
+      <form class="container" id="content"></form>
     </main>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
 
     <script>
-        const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc4MmM1NmMwNTgzNTAwMTg1MjJkZTYiLCJpYXQiOjE3MDIzNzQ0ODYsImV4cCI6MTcwMzU4NDA4Nn0.rh9ckj0X2izoP_x9c5ALxf1Wr78dNgDxMOvx3EwH74A"
-    const url = "https://striveschool-api.herokuapp.com/api/product/"
-  
-  
-   const params = new URLSearchParams(location.search)
-    const id = params.get("id")
+      const token =
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc4MmM1NmMwNTgzNTAwMTg1MjJkZTYiLCJpYXQiOjE3MDIzNzQ0ODYsImV4cCI6MTcwMzU4NDA4Nn0.rh9ckj0X2izoP_x9c5ALxf1Wr78dNgDxMOvx3EwH74A";
+      const url = "https://striveschool-api.herokuapp.com/api/product/";
 
-    const content = document.getElementById("content");
-    
-    fetch(`${url}/${id}`, {
+      const params = new URLSearchParams(location.search);
+      const id = params.get("id");
+
+      const content = document.getElementById("content");
+
+      fetch(`${url}/${id}`, {
         headers: {
-            "Authorization": token,
-            "Content-Type": "application/json"
+          Authorization: token,
+          "Content-Type": "application/json",
         },
-    })
-      .then((response) => response.json())
-      .then((product) => {
-        // VISUALIZZARE I DETTAGLI 
-        content.innerHTML = 
-        `<h1>Modifica prodotto</h1>
+      })
+        .then((response) => response.json())
+        .then((product) => {
+          // VISUALIZZARE I DETTAGLI
+          content.innerHTML = `<h1>Modifica prodotto</h1>
             <hr>
             <div class="mb-3">
               <label  class="form-label">Nome</label>
@@ -67,52 +70,70 @@
                 <label class="form-label">Descrizione prodotto</label>
                 <input type="text" class="form-control" id="descrizione"value="${product.description}">
               </div>
-              <button type="button" class="btn btn-danger">Elimina</button>
+              <button type="button" class="btn btn-danger" onclick="removeData()">Elimina</button>
             <button type="submit" class="btn btn-primary">Reset</button>
-            <button type="button" class="btn btn-warning" onclick="sendData()">Salva</button>`
-        ;
-      })
-      .catch((error) => {
-        console.error("Errore", error);
-      });
+            <button type="button" class="btn btn-warning" onclick="sendData()">Salva</button>`;
+        })
+        .catch((error) => {
+          console.error("Errore", error);
+        });
 
+      const finalUrl = url + id;
 
+      let products = [];
 
-  
-  let products = []
-  
-  
-        const sendData = () => {
-      const newProduct =  { 
-          "name": document.getElementById('nome').value,
-          "description": document.getElementById('descrizione').value,
-          "brand": document.getElementById('brand').value,
-          "imageUrl": document.getElementById('url').value,
-          "price": document.getElementById('prezzo').value
-      }
-  
-      const params = new URLSearchParams(location.search)
-    const id = params.get("id")
-      const finalUrl = url + id
+      const sendData = () => {
+        const newProduct = {
+          name: document.getElementById("nome").value,
+          description: document.getElementById("descrizione").value,
+          brand: document.getElementById("brand").value,
+          imageUrl: document.getElementById("url").value,
+          price: document.getElementById("prezzo").value,
+        };
 
-      fetch(finalUrl, {
+        const params = new URLSearchParams(location.search);
+        const id = params.get("id");
+
+        fetch(finalUrl, {
           method: "PUT",
           headers: {
-              "Authorization": token,
-              "Content-Type": "application/json"
+            Authorization: token,
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(newProduct)
-      })
-      .then((response) => response.json())
-      .then(data => {
-        products.splice(products.findIndex(element => element._id === id), 1, data)
-              
-          
-      })
-  .catch(err => alert(err))
-  
-  window.location.href="./product.html"
-  }
-      </script>
-</body>
+          body: JSON.stringify(newProduct),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            products.splice(
+              products.findIndex((element) => element._id === id),
+              1,
+              data
+            );
+          })
+          .catch((err) => alert(err));
+
+        window.location.href = "./product.html";
+      };
+
+      const removeData = () => {
+        {
+          fetch(finalUrl, {
+            method: "DELETE",
+            headers: {
+              Authorization: token,
+              "Content-Type": "application/json",
+            },
+          })
+            .then(() => {
+              products.splice(
+                products.findIndex((element) => element._id === id),
+                1
+              );
+            })
+            .catch((err) => alert(err));
+        }
+        window.location.href = "./product.html";
+      };
+    </script>
+  </body>
 </html>
