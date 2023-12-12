@@ -25,40 +25,7 @@ window.onload = () => {
     
 }
 
-const sendData = (action, id) => {
-    const newProduct =  { 
-        "name": "Nokia 55",
-        "description": "Indestructible cellphone",
-        "brand": "Nokia",
-        "imageUrl": "https://cdn.pixabay.com/photo/2018/01/23/01/24/cellphone-3100428_1281.png",
-        "price": 99
-        }
 
-    const finalUrl = action === 'edit' ? url + id : url
-
-    fetch(finalUrl, {
-        method: action === 'edit' ? "PUT" : "POST",
-        headers: {
-            "Authorization": token,
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(newProduct)
-    })
-    .then((response) => response.json())
-    .then(data => {
-        if (action === 'edit') {
-            products.splice(products.findIndex(element => element._id === id), 1, data)
-            createCards(products)
-        } else {
-            products.push(data)
-            createCards(products)
-        }
-        setAlert(action, 200)
-    })
-    .catch(() => {
-        setAlert(action, 400)
-})
-}
 
 function createCards (products) {
     console.log(products);
@@ -83,7 +50,7 @@ function createCards (products) {
                   <button
                     type="button"
                     class="btn btn-sm btn-outline-secondary"
-                    onclick="modalLogic(event)"
+                    onclick="editProduct('${product._id}')"
                   >
                     Modifica
                   </button>
@@ -108,5 +75,7 @@ function showDetails(productId) {
     window.location.href = `./details.html?id=${productId}` ;
 }
 
-
-// JS Back office
+// edit
+function editProduct(productId) {
+    window.location.href = `./edit.html?id=${productId}` ;
+}
