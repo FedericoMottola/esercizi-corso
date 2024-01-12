@@ -1,30 +1,26 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavBar from './components/NavBar'
-import AllTheBooks from './components/AllTheBooks'
-import Welcome from './components/Welcome'
-import {Container, Row, Col} from 'react-bootstrap/'
+import Main from './components/Main'
 import MyFooter from './components/MyFooter'
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [title, setTitle] = useState('Libreria')
  
+  useEffect(() => {
+    document.title = title
+  }, [title])
+
   return (
     <>
-      <NavBar/>
-      <Container style={{ minHeight: '85vh' }}>
-        <Row>
-          <Welcome />
-        </Row>
-        <Row>
-          <AllTheBooks />
-        </Row>
-      </Container>
+      <NavBar />
+      <Main setPageTitle={setTitle}/>
       <MyFooter />
-      
-      
     </>
   )
 }
-
+ 
 export default App
 
 
