@@ -1,85 +1,77 @@
-import React from 'react'
-import { useState, useEffect} from 'react';
+import React from "react";
+import { useState, useEffect } from "react";
+import { Carousel } from "react-bootstrap";
 
+const Galleries = ({ saga }) => {
+  const [films, setFilms] = useState([]);
+  const fetchData = async () => {
+    try {
+      const res = await fetch(
+        "http://www.omdbapi.com/?s=" + saga + "&apikey=5aec6ec7"
+      );
+      if (res.ok) {
+        let data = await res.json();
+        setFilms(data.Search);
+        console.log(data.Search);
+      } else {
+        console.log("error");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-
-const Galleries = ({saga}) => {
-    const [films, setFilms] = useState([]);
-    const fetchData = async () => {
-        try {
-            const res = await fetch (
-                'http://www.omdbapi.com/?s='+saga+'&apikey=5aec6ec7'
-            );
-            if (res.ok) {
-                let data = await res.json();
-                setFilms(data.Search);
-                console.log(data.Search);
-            } else {
-                console.log('error');
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-useEffect(() => {
+  useEffect(() => {
     fetchData();
-}, []);
+  }, []);
+  const chunkedFilms = films.reduce((resultArray, item, index) => {
+    const chunkIndex = Math.floor(index / 6);
 
-    return (
-<section>
+    if (!resultArray[chunkIndex]) {
+      resultArray[chunkIndex] = []; 
+    }
 
+    resultArray[chunkIndex].push(item);
 
-            <div className="row p-0 mb-0">
-                <h4 className="mt-4 text-uppercase">{saga}</h4>
-            <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
-            
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <div className="movie-row">
-                            <div className="row">
-                                {films.map((film) =>
-                                <div className="col-md-2">
-                                    <img className="img-fluid movie-cover d-block mx-auto " src={film.Poster} alt={film.Title} width= '100%' height ='auto'/>
-                                </div> )}
-                              
-                                
-                      
+    return resultArray;
+  }, []);
+  return (
+    
+    
+    <section>
+        <style>
+        {`
+          .movie-cover {
+            width: 100%;
+            height: auto;
+            min-height: 300px;
+            max-height: 300px; 
+          }
+        `}
+      </style>
+          <h4 className="mt-4 text-uppercase">{saga}</h4>
+          <Carousel className="col-md-12 col-11" indicators={true} controls={false}>
+            {chunkedFilms.map((chunk, index) => (
+              <Carousel.Item key={index}>
+                <div className="row">
+                  {chunk.map((film) => (
+                    <div key={film.imdbID} className="col-md-2">
+                      <img
+                        className="img-fluid movie-cover d-block mx-auto"
+                        src={film.Poster}
+                        alt={film.Title}
+                        
+                      />
                     </div>
-                  </div>
+                  ))}
                 </div>
-
-                <div className="carousel-item">
-                    <div className="movie-row">
-                        <div className="row">
-                        {films.map((film) =>
-                                <div className="col-md-2">
-                                    <img className="img-fluid movie-cover d-block mx-auto" src={film.Poster} alt={film.Title} width= '100%' height ='auto'/>
-                                </div> )}
-                           
-                  
-                </div>
-              </div>
-            </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span className="visually-hidden">Previous</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span className="visually-hidden">Next</span>
-                </button>
-              </div>
-            </div>
-        </div>
-           </section>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+          </section>
 
 
-
-
-
-        );
-       
+  );
 };
 
 export default Galleries;
