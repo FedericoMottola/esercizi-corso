@@ -14,6 +14,29 @@ p {
   position: relative;
 }
 
+.root {
+  content: '';
+  background: url('./assets/pexels-johannes-plenio-1118873.jpg') no-repeat center center/cover;
+  position:absolute;
+  width:100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 600;
+  font-size: 2rem;
+  color-scheme: light dark;
+  color: rgba(248, 247, 247, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 :root {
   content: '';
   background: url('./assets/pexels-johannes-plenio-1118873.jpg') no-repeat center center/cover;
@@ -37,12 +60,12 @@ p {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.app .search{
+.search{
   text-align: center;
   padding: 2 rem;
 }
 
-.app input {
+input {
   margin-top: 20px;
   padding: .5rem 2rem ;
   font-size: 1.2rem;
