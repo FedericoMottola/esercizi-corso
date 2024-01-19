@@ -16,7 +16,7 @@ p {
 
 :root {
   content: '';
-  background: url('./assets/pexels-pixabay-531756.jpg') no-repeat center center/cover;
+  background: url('./assets/pexels-johannes-plenio-1118873.jpg') no-repeat center center/cover;
   position:absolute;
   width:100%;
   height: 100%;
@@ -28,13 +28,26 @@ p {
   font-weight: 600;
   font-size: 2rem;
   color-scheme: light dark;
-  color: rgba(36, 35, 35, 0.87);
+  color: rgba(248, 247, 247, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.app .search{
+  text-align: center;
+  padding: 1 rem;
+}
+
+.app input {
+  padding: .5rem 2rem ;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .container{
@@ -70,6 +83,10 @@ p {
   padding: 1rem;
   border-radius: 12px;
   background-color: rgb( 255, 255, 255, 0.5);
+}
+
+.bold{
+  font-weight: 700;
 }
  
 /*

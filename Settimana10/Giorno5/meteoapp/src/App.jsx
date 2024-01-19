@@ -2,12 +2,28 @@ import React, { useState } from 'react'
 import './index.css'
 
 function App() {
-  // const url = 'https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=f31099d3657a9bc9492af703cf2113ea&lang=it&units=metric'
+  const [data, setData] = useState({})
+  const [location, setLocation] = useState('')
+  const url = 'https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=f31099d3657a9bc9492af703cf2113ea&lang=it&units=metric'
 
-  const [count, setCount] = useState(0)
+  const searchLocation = () => {
+    fetch(url)
+    .then(res => res.json())
+    .then(data => setData(data))
+    console.log(res.data)
+  }
+
+  
 
   return (
     <div className= 'app'>
+      <div className="search">
+        <input 
+        value={location}
+        onChange={(e) => setLocation(e.target.value)}
+        placeholder='Inserisci la tua località'
+        type="text" />
+      </div>
       <div className="container">
         <div className="top">
           <div className="location">
@@ -22,13 +38,16 @@ function App() {
         </div>
       <div className="bottom">
         <div className="feels">
-          <p>15°C</p>
+          <p className='bold'>15°C</p>
+          <p>Percepita</p>
         </div>
         <div className="humidity">
-          <p>50%</p>
+          <p className='bold'>50%</p>
+          <p>Umidità</p>
         </div>
         <div className="wind">
-          5 km/h
+          <p className='bold'>5 km/h</p>
+          <p>Vento</p>
         </div>
       </div>
       </div>
