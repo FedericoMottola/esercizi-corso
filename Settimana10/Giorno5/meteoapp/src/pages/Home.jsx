@@ -4,7 +4,7 @@ import '../index.css'
 
 const Home = ({page}) => {
     return (
-        <div>
+        <div className="app root">
             <Main page={page}/>
         </div>
     )

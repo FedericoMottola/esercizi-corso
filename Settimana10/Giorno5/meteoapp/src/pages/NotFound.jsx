@@ -15,7 +15,7 @@ const NotFound = () => {
     }, [])
 
     return (
-        <div>
+        <div className='app root'>
             <Nf />
         </div>
     )
